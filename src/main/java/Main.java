@@ -20,7 +20,7 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/hello", (req, res) -> "Hello World");
+    get("/hello", (req, res) -> "Hello World 1111");
 
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
@@ -43,8 +43,10 @@ public class Main {
         ArrayList<String> output = new ArrayList<String>();
         while (rs.next()) {
           output.add( "Read from DB: " + rs.getTimestamp("tick"));
+          
         }
 
+        output.add(">>> " + DatabaseUrl.extract().jdbcUrl() + " " + DatabaseUrl.extract().host());
         attributes.put("results", output);
         return new ModelAndView(attributes, "db.ftl");
       } catch (Exception e) {
