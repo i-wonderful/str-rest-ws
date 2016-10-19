@@ -46,7 +46,8 @@ public class Main {
           
         }
 
-        output.add(">>> " + DatabaseUrl.extract().jdbcUrl() + " " + DatabaseUrl.extract().host());
+        output.add(">>> " + DatabaseUrl.extract().jdbcUrl() + "   " + DatabaseUrl.extract().host() +
+                "  " + DatabaseUrl.extract().username() + "  " + DatabaseUrl.extract().password());
         attributes.put("results", output);
         return new ModelAndView(attributes, "db.ftl");
       } catch (Exception e) {
