@@ -1,7 +1,13 @@
 target
+<<<<<<< HEAD
 build
 .gradle
 .classpath
 .project
 .settings
 .env
+=======
+.env
+.idea/
+*.iml
+>>>>>>> a348a0cec554f12ccfdff9e903b95217d83274ef

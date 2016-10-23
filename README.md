@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## JAX-RS with Jersey and Grizzly or Jetty on Heroku
 
 JAX-RS is a great way to build RESTful services in Java. This is a very quick and simple example of how you can deploy a JAX-RS application on Heroku. 
@@ -23,3 +24,20 @@ The master branch currently uses Grizzly. If you want to use Jetty, check out th
 
     $ git clone -b jetty git@github.com:jesperfj/jax-rs-heroku.git
 
+=======
+# java-getting-started
+
+A barebones Java app, which can easily be deployed to Dokkur.
+
+This application supports the [Getting Started with Java on Dokkur](https://dokkur.com/#!/documentation/getting_started/java) article - check it out.
+
+## Deploying to Dokkur
+
+[Deploy to Dokkur](https://dokkur.com)
+
+## Documentation
+
+For more information about using Java on Dokkur, see these Documentation articles:
+
+- [Getting Started with Java on Dokkur](https://dokkur.com/#!/documentation/getting_started/java)
+>>>>>>> a348a0cec554f12ccfdff9e903b95217d83274ef
