@@ -4,18 +4,18 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
-//import com.sun.grizzly.http.SelectorThread;
-//import com.sun.jersey.api.container.grizzly.GrizzlyWebContainerFactory;
-import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
-import org.glassfish.jersey.server.ResourceConfig;
+import com.sun.grizzly.http.SelectorThread;
+import com.sun.jersey.api.container.grizzly.GrizzlyWebContainerFactory;
+//import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
+//import org.glassfish.jersey.server.ResourceConfig;
 //import com.sun.jersey.api.core.ResourceConfig;
 
 public class Main {
-    
-    static final String baseUri = "http://localhost:"+(System.getenv("PORT")!=null?System.getenv("PORT"):"9998")+"/";
+   // System.getenv("PORT")
+//    static final String baseUri2 = "http://localhost:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998");
     
     public static void main(String[] args) throws IOException {
-        
+        final String baseUri = "http://localhost:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998") + "/";
         
         final Map<String, String> initParams = new HashMap<String, String>();
 
@@ -26,18 +26,18 @@ public class Main {
         
         System.out.println("Starting grizzly...");
         
-//        SelectorThread threadSelector = GrizzlyWebContainerFactory.create(baseUri, initParams);
-        startServer();
+        SelectorThread threadSelector = GrizzlyWebContainerFactory.create(baseUri, initParams);
+//        startServer();
         
 //        resourceConfig.register(JacksonFeature.class);
         System.out.println(String.format("Jersey started with WADL available at %sapplication.wadl.",baseUri, baseUri));
     }
     
     
-    private static void startServer() {
-        
-        ResourceConfig rc = new ResourceConfig().packages("resources");
-        
-         GrizzlyHttpServerFactory.createHttpServer(URI.create(baseUri), rc);
-    }
+//    private static void startServer() {
+//        
+//        ResourceConfig rc = new ResourceConfig().packages("resources");
+//        
+//         GrizzlyHttpServerFactory.createHttpServer(URI.create(baseUri2), rc);
+//    }
 }
