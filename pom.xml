@@ -6,11 +6,12 @@
     <version>1.0-SNAPSHOT</version>
     <artifactId>jax-rs-heroku</artifactId>
     
+    <!-- #web:    java -cp webmodule/target/classes:webmodule/target/dependency/* com.github.pbuda.recaps.Main -->
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jersey2.version>2.23.2</jersey2.version>
-        <jersey.version>2.17</jersey.version>
+        <!--<jersey.version>2.17</jersey.version>-->
     </properties>
     
     
@@ -18,7 +19,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.glassfish.jersey</groupId>
-                <artifactId>jersey-bom</artifactId>
+                <artifactId>jersey-bom</artifactId> 
                 <version>${jersey2.version}</version>
                 <type>pom</type>
                 <scope>import</scope>

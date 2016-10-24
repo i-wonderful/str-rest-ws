@@ -14,15 +14,22 @@ public class HelloResource {
     @GET
     @Produces("text/plain")
     public String handleGreeting() {
-    	return "Hello World Eeee!!!! 123";
+        return "Hello World Eeee!!!! 123";
     }
-    
+
     @GET
     @Path("/tyty")
     @Produces(MediaType.APPLICATION_JSON)
     public Response handleRes() {
-       
-    	return  Response.ok(new Ress("He he he Goo000D!")).build();
+
+        return Response.ok(new Ress("He he he Goo000D!")).build();
     }
-    
+
+    @GET
+    @Path("/test")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Ress testClear() {
+        return new Ress("Eeeee yyk");
+    }
+
 }

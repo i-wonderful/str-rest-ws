@@ -14,18 +14,14 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 
 public class Main {
-    // System.getenv("PORT")
 
-    static final String baseUri2 = "http://0.0.0.0:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998") + "/";
+    static final String baseUri2 = "http://0.0.0.0:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"8081") + "/";
 
     public static void main(String[] args) throws IOException {
-//        final String baseUri = "http://0.0.0.0:" + (System.getenv("PORT") != null ? Integer.valueOf(System.getenv("PORT")) : "9998") + "/";
 
-        final Map<String, String> initParams = new HashMap<String, String>();
+//        final Map<String, String> initParams = new HashMap<String, String>();
 
-        //org.glassfish.jersey.server.ResourceConfig rc = new ResourceConfig();
-//    rc.packages("RestServer.controllers");
-        initParams.put("com.sun.jersey.config.property.packages", "resources");
+//        initParams.put("com.sun.jersey.config.property.packages", "resources");
 
         System.out.println("Starting grizzly...");
 
