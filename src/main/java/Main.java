@@ -1,13 +1,17 @@
 
+import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
+import com.sun.jersey.api.core.PackagesResourceConfig;
+import com.sun.jersey.api.core.ResourceConfig;
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.sun.grizzly.http.SelectorThread;
-import com.sun.jersey.api.container.grizzly.GrizzlyServerFactory;
-import com.sun.jersey.api.container.grizzly.GrizzlyWebContainerFactory;
+//import com.sun.grizzly.http.SelectorThread;
+//import com.sun.jersey.api.container.grizzly.GrizzlyServerFactory;
+//import com.sun.jersey.api.container.grizzly.GrizzlyWebContainerFactory;
 import javax.ws.rs.core.UriBuilder;
+import org.glassfish.grizzly.http.server.HttpServer;
 //import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 //import org.glassfish.jersey.server.ResourceConfig;
 //import com.sun.jersey.api.core.ResourceConfig;
@@ -30,13 +34,18 @@ public class Main {
         
 //        SelectorThread threadSelector = GrizzlyWebContainerFactory.create(baseUri, initParams);
 //        startServer();
-        startGrizzlyServer();
+        startGrizzlyServer().start();
 //        resourceConfig.register(JacksonFeature.class);
         System.out.println(String.format("Jersey started with WADL available at %sapplication.wadl.",baseUri2, baseUri2));
+        
+        while (true) {            
+            System.in.read();
+        }
     }
     
-    private static SelectorThread startGrizzlyServer() throws IOException {
-        return GrizzlyServerFactory.create(getURI());
+    private static HttpServer startGrizzlyServer() throws IOException {
+        ResourceConfig rc= new PackagesResourceConfig("resources");
+        return GrizzlyServerFactory.createHttpServer(getURI(), rc);
     }
     
     private static URI getURI(){
