@@ -15,7 +15,7 @@ public class Main {
 //    static final String baseUri2 = "http://localhost:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998");
     
     public static void main(String[] args) throws IOException {
-        final String baseUri = "http://localhost:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998") + "/";
+        final String baseUri = "http://0.0.0.0:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998") + "/";
         
         final Map<String, String> initParams = new HashMap<String, String>();
 
