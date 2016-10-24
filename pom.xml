@@ -58,11 +58,11 @@
                 <scope>test</scope>
         </dependency>-->
                 
-<!--        <dependency>
+        <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
-            <version>${jersey2.version}</version>
-        </dependency>-->
+            <version>2.23.2</version>
+        </dependency>
     </dependencies>
 
     <build>
