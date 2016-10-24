@@ -14,7 +14,7 @@ import javax.ws.rs.core.UriBuilder;
 
 public class Main {
    // System.getenv("PORT")
-    static final String baseUri2 = "http://0.0.0.0:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998");
+    static final String baseUri2 = "http://0.0.0.0/";//+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998");
     
     public static void main(String[] args) throws IOException {
         final String baseUri = "http://0.0.0.0:"+(System.getenv("PORT")!=null?Integer.valueOf(System.getenv("PORT")):"9998") + "/";
@@ -32,7 +32,7 @@ public class Main {
 //        startServer();
         startGrizzlyServer();
 //        resourceConfig.register(JacksonFeature.class);
-        System.out.println(String.format("Jersey started with WADL available at %sapplication.wadl.",baseUri, baseUri));
+        System.out.println(String.format("Jersey started with WADL available at %sapplication.wadl.",baseUri2, baseUri2));
     }
     
     private static SelectorThread startGrizzlyServer() throws IOException {
