@@ -1,7 +1,5 @@
 
-//import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
-//import com.sun.jersey.api.core.PackagesResourceConfig;
-//import com.sun.jersey.api.core.ResourceConfig;
+
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
@@ -19,16 +17,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-//        final Map<String, String> initParams = new HashMap<String, String>();
-
-//        initParams.put("com.sun.jersey.config.property.packages", "resources");
 
         System.out.println("Starting grizzly...");
-
-//        SelectorThread threadSelector = GrizzlyWebContainerFactory.create(baseUri, initParams);
-//        startServer();
+        
         startGrizzlyServer();
-//        resourceConfig.register(JacksonFeature.class);
+        
         System.out.println(String.format("Jersey started with WADL available at %sapplication.wadl.", baseUri2, baseUri2));
 
         while (true) {
@@ -37,9 +30,7 @@ public class Main {
     }
 
     private static HttpServer startGrizzlyServer() throws IOException {
-//        ResourceConfig rc= new PackagesResourceConfig("resources");
         ResourceConfig rec = new ResourceConfig().packages("resources");
-//        return GrizzlyServerFactory.createHttpServer(getURI(), rec);
         return GrizzlyHttpServerFactory.createHttpServer(getURI(), rec);
     }
 
@@ -48,10 +39,4 @@ public class Main {
       //  return UriBuilder.fromUri(baseUri2).port(System.getenv("PORT") != null ? Integer.valueOf(System.getenv("PORT")) : 9998).build();
     }
 
-//    private static void startServer() {
-//        
-//        ResourceConfig rc = new ResourceConfig().packages("resources");
-//        
-//         GrizzlyHttpServerFactory.createHttpServer(URI.create(baseUri2), rc);
-//    }
 }

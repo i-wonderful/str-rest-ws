@@ -14,7 +14,7 @@ public class HelloResource {
     @GET
     @Produces("text/plain")
     public String handleGreeting() {
-        return "Hello World Eeee!!!! 123";
+        return "Hello World Eeee!!!!";
     }
 
     @GET
